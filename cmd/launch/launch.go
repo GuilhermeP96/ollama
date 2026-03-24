@@ -471,7 +471,7 @@ func (c *launcherClient) launchSingleIntegration(ctx context.Context, name strin
 		return nil
 	}
 
-	if err := confirmLowContextLength(ctx, c.apiClient, []string{target}); err != nil {
+	if err := lowContextLength(ctx, c.apiClient, []string{target}); err != nil {
 		return err
 	}
 
@@ -501,7 +501,7 @@ func (c *launcherClient) launchEditorIntegration(ctx context.Context, name strin
 		return nil
 	}
 
-	if err := confirmLowContextLength(ctx, c.apiClient, models); err != nil {
+	if err := lowContextLength(ctx, c.apiClient, models); err != nil {
 		return err
 	}
 
